@@ -1,0 +1,50 @@
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+<div class="container text-center">
+   <h1>Password Generator</h1>
+   <br>
+   <form action="{% url 'password' %}">
+	<!-- El nombre que pongamos tras % url 
+	 será el nombre asignado al argumento name 
+	 (ver fichero urls) -->
+
+    
+	<select name="length">
+	<!-- Crea un botón de opciones múltiples 
+	-->
+	  <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8" selected="selected">8</option>
+	  <!-- el valor entre comillas es lo que recibe Django
+	   internamente. El valor >8< es lo que veremos nosotros en
+	   el website -->
+	  <!-- Valor seleccionado por defecto. Podemos cambiarlo. -->
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+	</select> Length
+        <br>
+	<br>
+	<input type="checkbox" name="uppercase"> Uppercase
+	<!-- 'checkbox' es una pestaña que se puede marcar. 
+	 Uppercase es el nombre que aparece junto al icono -->
+	 <!--'checkbox se traduce en un True o False, al cliquear o no
+	  en la pestaña (ver views.py) -->
+        <br>
+	<br>
+	<input type="checkbox" name="numbers" > Numbers
+	<br>
+	<br>
+        <input type="checkbox" name="special_caharacters"> Special chr
+	<br>
+	<br>
+	<input type="submit" value="Generate Password" 
+	class="btn btn-primary">
+	<!-- Crea un botón con el nombre 'Generate Password' sobre el
+	 mismo. Al pulsarlo, puesto que es un 'submit', nos lleva a la 
+	 página definida en 'form action' al principio del bloque. -->
+  </form>	
+
+<a href="{% url 'about' %}">About</a>
+
+</div>
